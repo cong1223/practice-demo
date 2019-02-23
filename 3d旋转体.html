@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				background-color: cornflowerblue;
+			}
+			.wrap{
+				margin: 200px auto;
+				width: 250px;
+				height: 250px;
+				position: relative;
+				transform-style: preserve-3d;
+				transform: rotateX(110deg);
+			}
+			.circle{
+				width: 80px;
+				height: 80px;
+				background-color: #fff;
+				border-radius: 50%;
+				box-shadow: 0 0 20px lightgray;
+				position: absolute;
+				top: 50%;
+				margin-top: -40px;
+				left: 50%;
+				margin-left: -40px;
+				transform: rotateX(70deg);
+				animation: circle 2s linear infinite;
+			}
+			@keyframes circle{
+				from{box-shadow: 0 0 0px lightgray;}
+				to{box-shadow: 0 0 40px lightgray;}
+			}
+			.x1{
+				transform-style: preserve-3d;
+				width: 250px;
+				height: 250px;
+				border-radius: 50%;
+				border: 1px solid #fff;
+				position: absolute;
+				transform: rotateY(60deg);
+				animation: x1 2s linear infinite 0.3s;
+			}
+			@keyframes x1{
+				from{transform: rotateY(60deg) rotateZ(0deg);}
+				to{transform: rotateY(60deg) rotateZ(360deg);}
+			}
+			.x1::after{
+				content: '';
+				display: block;
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				background-color: #FFFFFF;
+				transform-style: preserve-3d;
+				position: absolute;
+				left: -3px;
+				top: 50%;
+				margin-top: -3px;
+				transform: rotateX(110deg);
+			}
+			.x2{
+				transform-style: preserve-3d;
+				width: 250px;
+				height: 250px;
+				border-radius: 50%;
+				border: 1px solid #fff;
+				position: absolute;
+				transform: rotateY(120deg);
+				animation: x2 2s linear infinite 1.6s;
+			}
+			@keyframes x2{
+				from{transform: rotateY(120deg) rotateZ(0deg);}
+				to{transform: rotateY(120deg) rotateZ(360deg);}
+			}
+			.x2::after{
+				content: '';
+				display: block;
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				background-color: #FFFFFF;
+				transform-style: preserve-3d;
+				position: absolute;
+				left: -3px;
+				top: 50%;
+				margin-top: -3px;
+				transform: rotateX(110deg);
+				
+			}
+			.x3{
+				transform-style: preserve-3d;
+				width: 250px;
+				height: 250px;
+				border-radius: 50%;
+				border: 1px solid #fff;
+				position: absolute;
+				transform: rotateY(200deg);
+				animation: x3 2s linear infinite 1s;
+			}
+			@keyframes x3{
+				from{transform: rotateY(200deg) rotateZ(0deg);}
+				to{transform: rotateY(200deg) rotateZ(360deg);}
+			}
+			.x3::after{
+				content: '';
+				display: block;
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				background-color: #FFFFFF;
+				transform-style: preserve-3d;
+				position: absolute;
+				left: -3px;
+				top: 50%;
+				margin-top: -3px;
+				transform: rotateX(110deg);
+				
+			}
+			.x4{
+				transform-style: preserve-3d;
+				width: 250px;
+				height: 250px;
+				border-radius: 50%;
+				border: 1px solid #fff;
+				position: absolute;
+				transform: rotateY(340deg);
+				animation: x4 2s linear infinite 2s;
+			}
+			@keyframes x4{
+				from{transform: rotateY(340deg) rotateZ(0deg);}
+				to{transform: rotateY(340deg) rotateZ(360deg);}
+			}
+			.x4::after{
+				content: '';
+				display: block;
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				background-color: #FFFFFF;
+				transform-style: preserve-3d;
+				position: absolute;
+				left: -3px;
+				top: 50%;
+				margin-top: -3px;
+				transform: rotateX(110deg);
+				
+			}
+		
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="circle"></div>
+			<div class="x1"></div>
+			<div class="x2"></div>
+			<div class="x3"></div>
+			<div class="x4"></div>
+		</div>
+		
+	</body>
+</html>

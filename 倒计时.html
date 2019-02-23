@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			h1{
+				width: 500px;
+				margin: 30px auto;
+			}
+			.time{
+				width: 800px;
+				height: 100px;
+				background-color: yellow;
+				margin: 300px auto;
+				display: flex;
+				justify-content: space-between;
+			}
+			.time-item{
+				height: 100px;
+				width: 200px;
+				text-align: center;
+				line-height: 100px;
+				float: left;
+				overflow: hidden;
+			}
+			.time-item>div{
+				width: 100px;
+				float: left;
+			}
+			span{
+				font-size: 80px;
+				display: block;
+				height: 100px;
+				background-color: blue;
+			}
+			.seg{
+				font-size: 80px;
+				font-style: normal;
+				line-height: 85px;
+			}
+			.ani{
+				transition: margin 0.3s;
+			}
+			em{
+				display: block;
+				margin-left: 50%;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>距离2019年2月15日还剩：</h1>
+		<br />
+		<em>
+			只考虑100个小时内
+		</em>
+		
+		<div class="time">
+			<div class="time-item">
+				<div id="hour-s" class="ani">
+					<span>0</span>
+					<span>1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>6</span>
+					<span>7</span>
+					<span>8</span>
+					<span>9</span>
+					<span>0</span>
+				</div>
+				<div id="hour-g" class="ani">
+					<span>0</span>
+					<span>1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>6</span>
+					<span>7</span>
+					<span>8</span>
+					<span>9</span>
+					<span>0</span>
+				</div>
+			</div>
+			<div class="seg">:</div>
+			<div class="time-item">
+				<div id="minute-s" class="ani">
+					<span>0</span>
+					<span>1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>0</span>
+				</div>
+				<div id="minute-g" class="ani">
+					<span>0</span>
+					<span>1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>6</span>
+					<span>7</span>
+					<span>8</span>
+					<span>9</span>
+					<span>0</span>
+				</div>
+			</div>
+			<div class="seg">:</div>
+			<div class="time-item">
+				<div id="second-s" class="ani">
+					<span>0</span>
+					<span>1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>0</span>
+				</div>
+				<div id="second-g" class="ani">
+					<span>0</span>
+					<span>1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>6</span>
+					<span>7</span>
+					<span>8</span>
+					<span>9</span>
+					<span>0</span>
+				</div>
+			
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			
+			
+			var hs = document.getElementById("hour-s");
+			var hg = document.getElementById("hour-g");
+			var ms = document.getElementById("minute-s");
+			var mg = document.getElementById("minute-g");
+			var ss = document.getElementById("second-s");
+			var sg = document.getElementById("second-g");
+			
+			setInterval(function(){
+	//			获取现在时间时间戳:
+				var time = new Date();
+				var timeNow = time.getTime();
+				var h = time.getHours();
+				var m = time.getMinutes();
+				var s = time.getSeconds();
+	//			获取目标时间时间戳:
+				var last = new Date(2019,01,15);
+				var lastTime = last.getTime();
+	//			获得目标时间与现在时间的时间差:
+				var diff = lastTime - timeNow;
+				var hours = parseInt(diff / (60*60*1000));
+				diff = diff%(60*60*1000);
+				var minutes = parseInt(diff / (60*1000));
+				diff = diff%(60*1000);
+				var seconds = parseInt(diff / (1000));
+				
+	//			获得hours的margintop值:
+				var mths = ((hours - (hours % 10)) / 10)*100;
+				if (mths == 0) {
+					hs.style.marginTop = 0 + 'px';
+					setTimeout(function(){
+						hs.style.transition = 'none';
+						hs.style.marginTop = -1000 + 'px';
+					},300)
+				}else{
+					hs.style.transition = 'margin 0.3s linear';
+					hs.style.marginTop = -mths + 'px';
+				}
+				var mthg = (hours % 10)*100; 
+				if (mthg == 0) {
+					hg.style.marginTop = 0 + 'px';
+					setTimeout(function(){
+						hg.style.transition = 'none';
+						hg.style.marginTop = -1000 + 'px';
+					},300)
+				}else{
+					hg.style.transition = 'margin 0.3s linear';
+					hg.style.marginTop = -mthg + 'px';
+				}
+	//			获得minutes的margintop值:
+				var mtms = ((minutes - (minutes % 10)) / 10)*100;
+				if (mtms == 0) {
+					mg.style.marginTop = 0 + 'px';
+					setTimeout(function(){
+						mg.style.transition = 'none';
+						mg.style.marginTop = -600 + 'px';
+					},300)
+				}else{
+					ms.style.transition = 'margin 0.3s linear';
+					ms.style.marginTop = -mtms + 'px';
+				}
+				var mtmg = (minutes % 10)*100; 
+				if (mtmg == 0) {
+					sg.style.marginTop = 0 + 'px';
+					setTimeout(function(){
+						mg.style.transition = 'none';
+						mg.style.marginTop = -1000 + 'px';
+					},300)
+				}else{
+					mg.style.transition = 'margin 0.3s linear';
+					mg.style.marginTop = -mtmg + 'px';
+				}
+	//			获得seconds的margintop值:
+				var mtss = ((seconds - (seconds % 10)) / 10)*100;
+				if (mtss == 0) {
+					ss.style.marginTop = 0 + 'px';
+					setTimeout(function(){
+						ss.style.transition = 'none';
+						ss.style.marginTop = -600 + 'px';
+					},300)
+				}else{
+					ss.style.transition = 'margin 0.3s linear';
+					ss.style.marginTop = -mtss + 'px';
+				}
+				var mtsg = (seconds % 10)*100; 
+				if (mtsg == 0) {
+					sg.style.marginTop = 0 + 'px';
+					setTimeout(function(){
+						sg.style.transition = 'none';
+						sg.style.marginTop = -1000 + 'px';
+					},300)
+				}else{
+					sg.style.transition = 'margin 0.3s';
+					sg.style.marginTop = -mtsg + 'px';
+				}
+			},1000)
+			
+			
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,401 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body,html{
+	min-height:600px;
+	height: 100%;
+	position: relative;
+}
+nav{
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 450px;
+}
+nav >a{
+	display: block;
+	color: #333;
+	font-size: 13px;
+	font-weight: 700;
+}
+nav >a:hover{
+	color: #00c;
+}
+.setting{
+	color: #333;
+	font-size: 13px;
+	font-weight: 700;
+	position: relative;
+}
+.setting>a{
+	color: #333333;
+}
+.setting>a:hover{
+	color: #00c;
+}
+.a:hover +.option{
+	display: block;
+}
+.setting .option{
+	display: none;
+	position: absolute;
+	top: 24px;
+	left: -21px;
+	width: 70px;
+	border: 1px solid #d1d1d1;
+}
+.option a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	color: #333;
+	height: 26px;
+	text-decoration: none;
+}
+.option a:hover{
+	background-color: #38f;
+	color: #fff;
+}
+.sign1{
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 5px;
+	position: absolute;
+	left: 28px;
+	top: -10px;
+	border-color: transparent transparent #fff transparent;
+}
+.sign2{
+	position: absolute;
+	left: 27px;
+	top: -13px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 6px;
+	border-color: transparent transparent #d1d1d1 transparent;
+}
+.more{
+	width: 60px;
+	height: 24px;
+	background-color: #38f;
+	color: #fff;
+	font-size: 13px;
+	text-align: center;
+	line-height: 24px;
+}
+.logo >img{
+	width: 270px;
+	height: 129px;
+}
+.content{
+	position: relative;
+	top: 38.2%;
+	height: 191px;
+	width: 100%;
+	text-align: center;
+}
+.search{
+	position: relative;
+	top: -191px;
+}
+.context{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	width: 640px;
+	margin: 0 auto;
+	z-index: 10;
+}
+.inwrap{
+	width: 540px;
+	height: 34px;
+	border: 1px solid #b6b6b6;
+	border-right: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.inwrap>input{
+	display: block;
+	width: 500px;
+	height: 22px;
+	margin: 4 px 0 0 7px;
+	outline: none;
+	border: none;
+}
+.icon-shumajiadian{
+	margin-right: 5px;
+}
+.bd{
+	width: 100px;
+	height: 36px;
+	background-color: #3385ff;
+	font-size: 15px;
+	text-align: center;
+	line-height: 36px;
+	color: #fff;
+	cursor: pointer;
+}
+.bd:hover{
+	background-color: #2d78f4;
+}
+.footer{
+	position: relative;
+	bottom: -180px;
+}
+.footer p a,span{
+	color: #999999;
+	font-size: 12px;
+	margin: 0 10px;
+}
+.cmr{
+	margin: 0 !important;
+}
+.code{
+	font-size: 12px;
+	font-weight: 700px;
+	color: #666666;
+	margin-bottom: 10px;
+}
+.aside{
+	position: absolute;
+	width: 85px;
+	height: 100%;
+	right: 0;
+	top: 0;
+	z-index: 10;
+	border-left: 1px solid #e7e7e7;
+	background-color: #f9f9f9;
+	text-align: center;
+	padding: 0 8px;
+	box-sizing: border-box;
+	display: none;
+	transition: opacity .5s; 
+}
+.aside h6{
+	height: 36px;
+	text-align: center;
+	line-height: 25px;
+	font-size: 13px;
+	margin: 15px auto 5px;
+	border-bottom: 1px solid #f0f0f0;
+}
+.aside ul li{
+	list-style: none;
+	border-bottom: 1px solid #f0f0f0;
+}
+.aside ul li:hover >a{
+	text-decoration: underline;
+}
+.aside ul li a{
+	text-decoration: none;
+}
+.aside ul li a>img{
+	width: 36px;
+	height: 36px;
+	margin: 10px auto 5px;
+}
+.aside ul li a>span{
+	display: block;
+	margin-bottom: 10px;
+}
+.aside>.all{
+	font-size: 12px;
+	color: #666666;
+	margin-top: 10px;
+}
+.keywords{
+	width: 539px;
+	position: absolute;
+	top: 35px;
+	left: 0;
+	border: 1px solid #B6B6B6;
+	border-top: none;
+	z-index: -1;
+}
+.keywords li{
+	list-style: none;
+	text-align: left;
+	margin: 5px;
+	height: 22px;
+	line-height: 22px;
+}
+.keywords li a{
+	text-decoration: none;
+	color: #7A77C8;
+	font-size: 14px;
+}
+
+
+/*登陆部分样式*/
+.layyer{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.5);
+	z-index: 100;
+}
+.wrapLogin{
+	position: absolute;
+	left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+	width: 356px;
+	height: 429px;
+	z-index: 1000;
+	background-color: #fff;
+}
+.wrapInner{
+	width: 356px;
+	height: 429px;
+	position: relative;
+}
+.close{
+	width: 30px;
+	height: 30px;
+	color: #cccccd;
+	position: absolute;
+	top: 8px;
+	right: 5px;
+	transform: rotate(45deg);
+	font-size: 30px;
+	z-index: 9999999;
+}
+.close:hover{
+	cursor: pointer;
+}
+.slogan{
+	height: 45px;
+	width: 100%;
+	position: absolute;
+	top: 30px;
+	left: 0;
+	line-height: 71px;
+	
+}
+.slogan img{
+	width: 100px;
+	height: 50px;
+	margin: 0 0 10px 20px;
+	float: left;
+}
+.slogan span{
+	font-size: 16px;
+	color: #000000;
+	display: inline-block;
+	float: left;
+}
+.passCode{
+	width: 356px;
+	height: 158px;
+	position: absolute;
+	top: 108px;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.hideDiv{
+	width: 260px;
+	height: 156px;
+	transition: all .5s;
+	transform: translateX(55px);
+}
+.hideDiv:hover{
+	transform: translateX(0);
+}
+.hideDiv:hover >.img_hide{
+	display: inline-block;
+}
+.hideDiv .img_code{
+	width: 156px;
+	height: 156px;
+	margin-right: 10px;
+}
+.hideDiv .img_hide{
+	display: none;
+}
+.p1{
+	position: absolute;
+	top: 285px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+.p1 .ls,.rs{
+	font-size: 16px;
+	color: #000000;
+	margin: 0;
+}
+.p1 .app{
+	color: #2e82ff;
+	text-decoration: none;
+}
+.ulElement{
+	position: absolute;
+	bottom: 90px;
+	left: 50%;
+	margin-left: -124px;
+	width: 245px;
+	height: 21px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 12px;
+	color: #999999;
+}
+.ulElement >li{
+	list-style: none;
+}
+.register{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	background-color: #f0f6ff;
+	display: flex;
+	align-items: center;
+}
+.register .bl{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 160px;
+	font-size: 14px;
+}
+.register .bl>a,span{
+	color: #2e82ff;
+	text-decoration: none;
+	margin: 0 5px;
+}
+.register .bl>.seg{
+	width: 1px;
+	height: 12px;
+	display: inline-block;
+	background-color: #2e82ff;
+	margin: 0 5px;
+}
+.register .br{
+	color: #2e82ff;
+	text-decoration: none;
+	font-size: 14px;
+	margin-left: 100px;
+}
+.move{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+}
